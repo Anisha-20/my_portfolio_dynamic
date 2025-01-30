@@ -1,0 +1,211 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('../images/scenery.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* About Section */
+.about {
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.about h1 {
+    font-size: 3em;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.about p {
+    font-size: 1.3em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Projects Section */
+.projects {
+    padding: 100px 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Projects Page - Grid Layout */
+.projects-container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Project Card - Default State */
+.project-card {
+    position: relative;
+    background: rgba(140, 215, 226, 0.829);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(221, 103, 103, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Project Name - Always Visible */
+.project-info h3 {
+    font-size: 22px;
+    color: rgb(123, 116, 221);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Project Details - Hidden by Default */
+.project-description, .project-info a {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 16px;
+    color: #c9f195;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+/* Expand on Hover */
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card:hover .project-description,
+.project-card:hover .project-info a {
+    opacity: 1;
+    max-height: 100px;
+}
+
+/* View Project Button */
+.project-info a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ffcc00;
+    font-weight: bold;
+    border-bottom: 2px solid #ffcc00;
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.contact a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+.sparkle-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sparkle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: #eeff00;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: sparkle 0.5s ease-out;
+}
